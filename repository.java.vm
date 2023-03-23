@@ -1,0 +1,18 @@
+##导入宏定义
+$!{define.vm}
+
+##设置表后缀（宏定义）
+#setTableSuffix("Repository")
+
+##保存文件（宏定义）
+#save("/repository", "Repository.java")
+
+##包路径（宏定义）
+#setPackageSuffix("repository")
+
+##表注释（宏定义）
+#tableComment("数仓层接口")
+public interface $!{tableName} {
+
+
+}

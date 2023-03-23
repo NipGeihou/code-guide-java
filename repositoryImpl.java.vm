@@ -1,0 +1,24 @@
+##导入宏定义
+$!{define.vm}
+
+##设置表后缀（宏定义）
+#setTableSuffix("RepositoryImpl")
+
+##保存文件（宏定义）
+#save("/repository/impl", "RepositoryImpl.java")
+
+##包路径（宏定义）
+#setPackageSuffix("repository.impl")
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import $!{tableInfo.savePackageName}.domain.entity.$!{tableInfo.name};
+import $!{tableInfo.savePackageName}.mapper.$!{tableInfo.name}Mapper;
+import $!{tableInfo.savePackageName}.repository.$!{tableInfo.name}Repository;
+import org.springframework.stereotype.Repository;
+
+##表注释（宏定义）
+#tableComment("数仓层实现类")
+@Repository
+public class $!{tableName} extends ServiceImpl<$!{tableInfo.name}Mapper, $!{tableInfo.name}> implements $!{tableInfo.name}Repository {
+
+
+}

@@ -1,0 +1,25 @@
+##导入宏定义
+$!{define.vm}
+
+##设置表后缀（宏定义）
+#setTableSuffix("Service")
+
+##保存文件（宏定义）
+#save("/service", "Service.java")
+
+##包路径（宏定义）
+#setPackageSuffix("service")
+
+import lombok.RequiredArgsConstructor;
+import $!{tableInfo.savePackageName}.repository.$!{tableInfo.name}Repository;
+import org.springframework.stereotype.Service;
+
+##表注释（宏定义）
+#tableComment("服务层")
+@Service
+@RequiredArgsConstructor
+public class $!{tableName} {
+
+    private final $!{tableInfo.name}Repository $!{tool.firstLowerCase($tableInfo.name)}Repository;
+
+}
